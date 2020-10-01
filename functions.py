@@ -8,50 +8,43 @@ x4 = np.linspace(0, 10, 1000)
 dx = -0.00014
 
 
-def y1(x):
-    y1 = 7 * x ** 2 - 8 * x + 1
-    return y1
+def f1(x):
+    return 7 * x ** 2 - 8 * x + 1
 
 
-
-def y2(x):
-    y2 = np.sin(x)
-    return y2
+def f2(x):
+    return np.sin(x)
 
 
-def y3(x):
-    y3 = (1 - x) / ((x + 3) ** 2)
-    return y3
+def f3(x):
+    return (1 - x) / ((x + 3) ** 2)
 
 
-def y4(x):
-    y4 = np.sqrt(1 + (x ** 2))
-    return y4
+def f4(x):
+    return np.sqrt(1 + (x ** 2))
 
 
-def dy1(x):
-    dy1 = 14 * x - 8
-    return dy1
+# df = deriverte av f(x)
+def df1(x):
+    return 14 * x - 8
 
 
-def dy2(x):
-    dy2 = np.cos(x)
-    return dy2
+def df2(x):
+    return np.cos(x)
 
 
-def dy3(x):
-    dy3 = (x - 5) / (x + 3) ** 3
-    return dy3
+def df3(x):
+    return (x - 5) / (x + 3) ** 3
 
 
-def dy4(x):
-    dy4 = x / np.sqrt(1 + x ** 2)
-    return dy4
+def df4(x):
+    return x / np.sqrt(1 + x ** 2)
 
 
+# Funksjon for beregning av vekstrate
 def gx(x, y):
-    points = []
-    for i in x:
-        points.append((y(i + dx) - y(i)) / dx)
-        print((y(i + dx) - y(i)) / dx)
-    return points
+    return (y(x + dx) - y(x)) / dx
+
+
+def ex(df, gx):
+    return np.abs(df - gx)

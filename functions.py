@@ -9,35 +9,44 @@ dx = -0.00014
 
 
 def y1(x):
-    return 7 * x ** 2 - 8 * x + 1
+    y1 = 7 * x ** 2 - 8 * x + 1
+    return y1
+
 
 
 def y2(x):
-    return np.sin(x)
+    y2 = np.sin(x)
+    return y2
 
 
 def y3(x):
-    return (1 - x) / ((x + 3) ** 2)
+    y3 = (1 - x) / ((x + 3) ** 2)
+    return y3
 
 
 def y4(x):
-    return np.sqrt(1 + (x ** 2))
+    y4 = np.sqrt(1 + (x ** 2))
+    return y4
 
 
 def dy1(x):
-    return 14 * x - 8
+    dy1 = 14 * x - 8
+    return dy1
 
 
 def dy2(x):
-    return np.cos(x)
+    dy2 = np.cos(x)
+    return dy2
 
 
 def dy3(x):
-    return (x - 5) / (x + 3) ** 3
+    dy3 = (x - 5) / (x + 3) ** 3
+    return dy3
 
 
 def dy4(x):
-    return x / np.sqrt(1 + x ** 2)
+    dy4 = x / np.sqrt(1 + x ** 2)
+    return dy4
 
 
 def gx(x, y):

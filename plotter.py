@@ -25,17 +25,17 @@ def plotSetup2():
 
 
 def labelPlot():
-    plt.legend(loc='lower right')
+    plt.legend(loc='upper center')
     plt.show()
 
 
 def plot1():
     plotSetup()
     plt.plot(x1, f1(x1), 'red', label='f(x)')
-    plt.plot(x1, df1(x1), 'yellow', label='df(x)')
-    vekstrate = regnVekstrate(x1, f1)
+    plt.plot(x1, df1(x1), 'green', label='df(x)')
+    vekstrate = regnVekstrate(x1, f1, dx1)
     plt.plot(x1, vekstrate, 'purple', label='g(x)')
-    feil = regnFeilpunkter(x1, f1, df1)
+    feil = regnFeilpunkter(x1, f1, df1, dx1)
     plt.plot(x1, feil, 'blue', label='E(x)')
     plt.savefig('figurer/oppgave2a.png')
     labelPlot()
@@ -43,11 +43,11 @@ def plot1():
 
 def plot2():
     plotSetup()
-    plt.plot(x2, f2(x2), 'blue', label='f(x)')
-    plt.plot(x2, df2(x2), 'yellow', label='df(x)')
-    vekstrate = regnVekstrate(x2, f2)
+    plt.plot(x2, f2(x2), 'red', label='f(x)')
+    plt.plot(x2, df2(x2), 'green', label='df(x)')
+    vekstrate = regnVekstrate(x2, f2, dx2)
     plt.plot(x2, vekstrate, 'purple', label='g(x)')
-    feil = regnFeilpunkter(x2, f2, df2)
+    feil = regnFeilpunkter(x2, f2, df2, dx2)
     plt.plot(x2, feil, 'blue', label='E(x)')
     plt.savefig('figurer/oppgave2b.png')
     labelPlot()
@@ -56,10 +56,10 @@ def plot2():
 def plot3():
     plotSetup()
     plt.plot(x3, f3(x3), 'red', label='f(x)')
-    plt.plot(x3, df3(x3), 'yellow', label='df(x)')
-    vekstrate = regnVekstrate(x3, f3)
+    plt.plot(x3, df3(x3), 'green', label='df(x)')
+    vekstrate = regnVekstrate(x3, f3, dx3)
     plt.plot(x3, vekstrate, 'purple', label='g(x)')
-    feil = regnFeilpunkter(x3, f3, df3)
+    feil = regnFeilpunkter(x3, f3, df3, dx3)
     plt.plot(x3, feil, 'blue', label='E(x)')
     plt.savefig('figurer/oppgave2c.png')
     labelPlot()
@@ -68,26 +68,25 @@ def plot3():
 def plot4():
     plotSetup()
     plt.plot(x4, f4(x4), 'red', label='f(x)')
-    plt.plot(x4, df4(x4), 'yellow', label='df(x)')
-    vekstrate = regnVekstrate(x4, f4)
+    plt.plot(x4, df4(x4), 'green', label='df(x)')
+    vekstrate = regnVekstrate(x4, f4, dx4)
     plt.plot(x4, vekstrate, 'purple', label='g(x)')
-    feil = regnFeilpunkter(x4, f4, df4)
+    feil = regnFeilpunkter(x4, f4, df4, dx4)
     plt.plot(x4, feil, 'blue', label='E(x)')
     plt.savefig('figurer/oppgave2d.png')
     labelPlot()
 
 
-def regnVekstrate(intervall, funk):
+def regnVekstrate(intervall, funk, dx):
     vekstrate = []
     for i in intervall:
-        vekstrate.append(gx(i, funk))
+        vekstrate.append(gx(i, funk, dx))
     return vekstrate
 
 
-def regnFeilpunkter(intervall, fx, dfx):
+def regnFeilpunkter(intervall, fx, dfx, dx):
     feil = []
     for i in intervall:
-        calcgx = gx(i, fx)
+        calcgx = gx(i, fx, dx)
         feil.append(ex(dfx(i), calcgx))
-        print(ex(dfx(i), calcgx))
     return feil

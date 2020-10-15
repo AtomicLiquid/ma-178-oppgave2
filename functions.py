@@ -5,7 +5,10 @@ x2 = np.linspace(0, 2 * np.pi, 1000)
 x3 = np.linspace(-2, 2, 1000)
 x4 = np.linspace(0, 10, 1000)
 
-dx = 0.001
+dx1 = 0.00014
+dx2 = 0.25
+dx3 = 0.032
+dx4 = 0.25
 
 
 def f1(x):
@@ -42,7 +45,7 @@ def df4(x):
 
 
 # Funksjon for beregning av vekstrate
-def gx(x, y):
+def gx(x, y, dx):
     return (y(x + dx) - y(x)) / dx
 
 

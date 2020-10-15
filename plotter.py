@@ -24,8 +24,9 @@ def plotSetup2():
     ax.yaxis.set_ticks_position('left')
 
 
-def labelPlot():
+def labelPlot(fignavn):
     plt.legend(loc='upper center')
+    plt.savefig(fignavn)
     plt.show()
 
 
@@ -37,8 +38,7 @@ def plot1():
     plt.plot(x1, vekstrate, 'purple', label='g(x)')
     feil = regnFeilpunkter(x1, f1, df1, dx1)
     plt.plot(x1, feil, 'blue', label='E(x)')
-    plt.savefig('figurer/oppgave2a.png')
-    labelPlot()
+    labelPlot('figurer/oppgave2a.png')
 
 
 def plot2():
@@ -49,8 +49,7 @@ def plot2():
     plt.plot(x2, vekstrate, 'purple', label='g(x)')
     feil = regnFeilpunkter(x2, f2, df2, dx2)
     plt.plot(x2, feil, 'blue', label='E(x)')
-    plt.savefig('figurer/oppgave2b.png')
-    labelPlot()
+    labelPlot('figurer/oppgave2b.png')
 
 
 def plot3():
@@ -61,8 +60,7 @@ def plot3():
     plt.plot(x3, vekstrate, 'purple', label='g(x)')
     feil = regnFeilpunkter(x3, f3, df3, dx3)
     plt.plot(x3, feil, 'blue', label='E(x)')
-    plt.savefig('figurer/oppgave2c.png')
-    labelPlot()
+    labelPlot('figurer/oppgave2c.png')
 
 
 def plot4():
@@ -73,8 +71,7 @@ def plot4():
     plt.plot(x4, vekstrate, 'purple', label='g(x)')
     feil = regnFeilpunkter(x4, f4, df4, dx4)
     plt.plot(x4, feil, 'blue', label='E(x)')
-    plt.savefig('figurer/oppgave2d.png')
-    labelPlot()
+    labelPlot('figurer/oppgave2d.png')
 
 
 def regnVekstrate(intervall, funk, dx):

@@ -5,7 +5,7 @@ x2 = np.linspace(0, 2 * np.pi, 1000)
 x3 = np.linspace(-2, 2, 1000)
 x4 = np.linspace(0, 10, 1000)
 
-dx = -0.00014
+dx = 0.001
 
 
 def f1(x):
@@ -46,5 +46,5 @@ def gx(x, y):
     return (y(x + dx) - y(x)) / dx
 
 
-def ex(df, gx):
-    return np.abs(df - gx)
+def ex(dfx, calcgx):
+    return np.abs(dfx - calcgx)

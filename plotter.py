@@ -31,134 +31,50 @@ def labelPlot():
 
 def plot1():
     plotSetup()
-    plt.plot(x1, f1(x1), 'red', label='f(x) = 7 * x ** 2 - 8 * x + 1')
+    plt.plot(x1, f1(x1), 'red', label='f(x)')
+    plt.plot(x1, df1(x1), 'yellow', label='df(x)')
+    vekstrate = regnVekstrate(x1, f1)
+    plt.plot(x1, vekstrate, 'purple', label='g(x)')
+    feil = regnFeilpunkter(x1, f1, df1)
+    plt.plot(x1, feil, 'blue', label='E(x)')
+    plt.savefig('figurer/oppgave2a.png')
     labelPlot()
-    plt.savefig('figurer/oppgave2a1.png')
 
 
 def plot2():
     plotSetup()
-    plt.plot(x2, f2(x2), 'blue', label='f(x) = sin(x)')
+    plt.plot(x2, f2(x2), 'blue', label='f(x)')
+    plt.plot(x2, df2(x2), 'yellow', label='df(x)')
+    vekstrate = regnVekstrate(x2, f2)
+    plt.plot(x2, vekstrate, 'purple', label='g(x)')
+    feil = regnFeilpunkter(x2, f2, df2)
+    plt.plot(x2, feil, 'blue', label='E(x)')
+    plt.savefig('figurer/oppgave2b.png')
     labelPlot()
-    plt.savefig('figurer/oppgave2a2.png')
 
 
 def plot3():
     plotSetup()
-    plt.plot(x3, f3(x3), 'green', label='f(x) = (1 - x) / ((x + 3) ** 2)')
+    plt.plot(x3, f3(x3), 'red', label='f(x)')
+    plt.plot(x3, df3(x3), 'yellow', label='df(x)')
+    vekstrate = regnVekstrate(x3, f3)
+    plt.plot(x3, vekstrate, 'purple', label='g(x)')
+    feil = regnFeilpunkter(x3, f3, df3)
+    plt.plot(x3, feil, 'blue', label='E(x)')
+    plt.savefig('figurer/oppgave2c.png')
     labelPlot()
-    plt.savefig('figurer/oppgave2a3.png')
 
 
 def plot4():
     plotSetup()
-    plt.plot(x4, f4(x4), 'orange', label='f(x) = sqrt(1 + (x ** 2))')
-    labelPlot()
-    plt.savefig('figurer/oppgave2a4.png')
-
-
-def plotderivative1():
-    plotSetup()
-    plt.plot(x1, df1(x1), 'red', label='df(x) = 14 * x - 8')
-    labelPlot()
-    plt.savefig('figurer/oppgave2b1.png')
-
-
-def plotderivative2():
-    plotSetup()
-    plt.plot(x2, df2(x2), 'blue', label='df(x) = cos(x)')
-    labelPlot()
-    plt.savefig('figurer/oppgave2b2.png')
-
-
-def plotderivative3():
-    plotSetup2()
-    plt.plot(x3, df3(x3), 'green', label='df(x) = (x - 5) / (x + 3) ** 3')
-    labelPlot()
-    plt.savefig('figurer/oppgave2b3.png')
-
-
-def plotderivative4():
-    plotSetup()
-    plt.plot(x4, df4(x4), 'orange', label='df(x) = x / sqrt(1 + x ** 2)')
-    labelPlot()
-    plt.savefig('figurer/oppgave2b4.png')
-
-
-def vekst1():
-    plotSetup()
-    plt.plot(x1, f1(x1), 'red', label='f(x) = 7 * x ** 2 - 8 * x + 1')
-    vekstrate = regnVekstrate(x1, f1)
-    plt.plot(x1, vekstrate, 'purple', label='vekstrate')
-    labelPlot()
-    plt.savefig('figurer/oppgave2c1.png')
-
-
-def vekst2():
-    plotSetup()
-    plt.plot(x2, f2(x2), 'blue', label='f(x) = sin(x)')
-    vekstrate = regnVekstrate(x2, f2)
-    plt.plot(x2, vekstrate, 'purple', label='vekstrate')
-    labelPlot()
-    plt.savefig('figurer/oppgave2c2.png')
-
-
-def vekst3():
-    plotSetup()
-    plt.plot(x3, f3(x3), 'green', label='f(x) = (1 - x) / ((x + 3) ** 2)')
-    vekstrate = regnVekstrate(x3, f3)
-    plt.plot(x3, vekstrate, 'purple', label='vekstrate')
-    labelPlot()
-    plt.savefig('figurer/oppgave2c3.png')
-
-
-def vekst4():
-    plotSetup()
-    plt.plot(x4, f4(x4), 'orange', label='f(x) = sqrt(1 + (x ** 2))')
+    plt.plot(x4, f4(x4), 'red', label='f(x)')
+    plt.plot(x4, df4(x4), 'yellow', label='df(x)')
     vekstrate = regnVekstrate(x4, f4)
-    plt.plot(x4, vekstrate, 'purple', label='vekstrate')
+    plt.plot(x4, vekstrate, 'purple', label='g(x)')
+    feil = regnFeilpunkter(x4, f4, df4)
+    plt.plot(x4, feil, 'blue', label='E(x)')
+    plt.savefig('figurer/oppgave2d.png')
     labelPlot()
-    plt.savefig('figurer/oppgave2c4.png')
-
-
-def feil1():
-    plotSetup()
-    feil = regnFeilpunkter(x1, f1)
-    plt.plot(x1, feil, 'red', label='E(x)')
-    labelPlot()
-    plt.savefig('figurer/oppgave2d1.png')
-
-
-def feil2():
-    plotSetup()
-    feil = regnFeilpunkter(x2, f2)
-    plt.plot(x2, feil, 'red', label='E(x)')
-    labelPlot()
-    plt.savefig('figurer/oppgave2d2.png')
-
-
-def feil3():
-    plotSetup()
-    feil = regnFeilpunkter(x3, f3)
-    plt.plot(x3, feil, 'red', label='E(x)')
-    labelPlot()
-    plt.savefig('figurer/oppgave2d3.png')
-
-
-def feil4():
-    plotSetup()
-    feil = regnFeilpunkter(x4, f4)
-    plt.plot(x4, feil, 'red', label='E(x)')
-    labelPlot()
-    plt.savefig('figurer/oppgave2d4.png')
-
-
-def regnFeilpunkter(intervall, funk):
-    feil = []
-    for i in intervall:
-        calcgx = gx(i, funk)
-        feil.append(ex(funk(i), calcgx))
-    return feil
 
 
 def regnVekstrate(intervall, funk):
@@ -166,3 +82,12 @@ def regnVekstrate(intervall, funk):
     for i in intervall:
         vekstrate.append(gx(i, funk))
     return vekstrate
+
+
+def regnFeilpunkter(intervall, fx, dfx):
+    feil = []
+    for i in intervall:
+        calcgx = gx(i, fx)
+        feil.append(ex(dfx(i), calcgx))
+        print(ex(dfx(i), calcgx))
+    return feil
